@@ -23,4 +23,12 @@ export default class extends BasicEntity {
     this.y += this.dy;
     this.x += this.dx;
   }
+  render() {
+    const { ctx, x, y, radius, color } = this;
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI*2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.closePath();
+  }
 }

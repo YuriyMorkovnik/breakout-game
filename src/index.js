@@ -80,37 +80,10 @@ const keyUpHandler = ({ key }) => {
   }
 };
 
-const renderBall = () => {
-  const { x, y, radius, color } = ball;
-  ctx.beginPath();
-  ctx.arc(x, y, radius, 0, Math.PI*2);
-  ctx.fillStyle = color;
-  ctx.fill();
-  ctx.closePath();
-};
-
-const renderPaddle = () => {
-  const { height, width, x, color } = paddle;
-  ctx.beginPath();
-  ctx.rect(x, canvas.height-height, width, height);
-  ctx.fillStyle = color;
-  ctx.fill();
-  ctx.closePath();
-};
 
 const renderBricks = bricks => {
-  bricks.forEach(({
-    x,
-    y,
-    width,
-    height,
-    color,
-  }) => {
-    ctx.beginPath();
-    ctx.rect(x, y, width, height);
-    ctx.fillStyle = color;
-    ctx.fill();
-    ctx.closePath()
+  bricks.forEach((brick) => {
+    brick.render();
   })
 };
 
@@ -133,8 +106,8 @@ const render = () => {
     ? bricks.filter(brick => brick.key !== collidingBrick.key)
     : bricks;
 
-  renderBall();
-  renderPaddle();
+  ball.render();
+  paddle.render();
   renderBricks(bricks);
 
   if(isViewTop(ball)

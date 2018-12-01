@@ -5,6 +5,8 @@ export default class {
     this.color = color;
     this.x = x;
     this.y = y;
+    this.canvas = document.getElementById('myCanvas');
+    this.ctx = this.canvas.getContext('2d');
   }
   get getX() {
     return this.x;

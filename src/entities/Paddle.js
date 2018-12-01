@@ -11,4 +11,12 @@ export default class extends BasicEntity {
   moveRight() {
     this.x += this.dx;
   }
+  render() {
+    const { ctx, height, width, x, color, canvas } = this;
+    ctx.beginPath();
+    ctx.rect(x, canvas.height-height, width, height);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.closePath();
+  }
 }
