@@ -1,5 +1,5 @@
 export default class {
-  constructor({ x, y, width, height, color }) {
+  constructor({ x, y, width, height, color = '#0095DD' }) {
     this.width = width;
     this.height = height;
     this.color = color;

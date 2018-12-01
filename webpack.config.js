@@ -1,5 +1,6 @@
 module.exports = {
-  entry: './index.js',
+  devtool: 'source-map',
+  entry: './src/index.js',
   output: {
     path: __dirname + '/public',
     filename: 'build.js',

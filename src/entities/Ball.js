@@ -7,6 +7,12 @@ export default class extends BasicEntity {
     this.dy = props.dy;
     this.radius = props.radius;
   }
+  get getNextPosition() {
+    return {
+      x: this.x + this.dx + (this.dx > 0 ? this.radius : -this.radius),
+      y: this.y + this.dy + (this.dy > 0 ? this.radius : -this.radius),
+    }
+  }
   reverseX() {
     this.dx = -this.dx;
   }
