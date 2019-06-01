@@ -8,7 +8,9 @@
     "build": "webpack --progress -p",
     "watch": "webpack --progress --watch",
     "server": "webpack-dev-server --open",
-    "start": "webpack --progress -p && node ./server/index.js"
+    "start": "webpack --progress -p && node ./server/index.js",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "author": "Yuriy Morkovnik",
   "license": "ISC",
@@ -23,7 +25,9 @@
   },
   "dependencies": {
     "express": "^4.16.4",
+    "gh-pages": "^2.0.1",
     "lodash": "^4.17.11",
     "ramda": "^0.26.0"
-  }
+  },
+  "homepage":"https://yuriymorkovnik.github.io/breakout-game/"
 }
